@@ -28,11 +28,11 @@ class Modal extends Component {
   };
 
   render() {
-    const { LargeImg, alt } = this.props.dataLargeImage;
+    const { largeImageURL, tags } = this.props.dataLargeImage;
     return (
       <div className={s.Overlay} onClick={this.onOverlayClick}>
         <div className={s.Modal}>
-          <img src={LargeImg} alt={alt} />
+          <img src={largeImageURL} alt={tags} />
         </div>
       </div>
     );
@@ -42,8 +42,8 @@ class Modal extends Component {
 Modal.propTypes = {
   toogleModal: PropTypes.func,
   dataLargeImage: PropTypes.shape({
-    LargeImg: PropTypes.string.isRequired,
-    alt: PropTypes.string.isRequired,
+    largeImageURL: PropTypes.string.isRequired,
+    tags: PropTypes.string.isRequired,
   }),
 };
 
